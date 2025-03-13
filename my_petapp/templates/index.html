@@ -9,7 +9,8 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="{% url 'img/favicon.ico' %} " rel="icon">
+    {% load static %}
+    <link href="{% static 'img/feature.jpg' %} " rel="icon">
 
     <!-- Google Web Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet"> 
@@ -18,18 +19,25 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
     <!-- Flaticon Font -->
-    <link href="{% url 'lib/flaticon/font/flaticon.css' %}" rel="stylesheet">
+{% load static %}
+<link href="{% static 'lib/flaticon/font/flaticon.css' %}" rel="stylesheet">
+
 
     <!-- Libraries Stylesheet -->
-    <link href="{% url 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
-    <link href="{% url 'lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet" />
+{% load static %}
+<link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+<link href="{% static 'lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet">
+
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="{% url 'css/style.css' %}" rel="stylesheet">
+{% load static %}
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+
 </head>
 
 <body>
     <!-- Topbar Start -->
+    {% load static %}
     <div class="container-fluid">
         <div class="row bg-secondary py-2 px-lg-5">
             <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
@@ -89,6 +97,7 @@
 
 
     <!-- Navbar Start -->
+    {% load static %}
     <div class="container-fluid p-0">
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
             <a href="" class="navbar-brand d-block d-lg-none">
@@ -121,11 +130,12 @@
 
 
     <!-- Carousel Start -->
+    {% load static %}
     <div class="container-fluid p-0">
         <div id="header-carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" src="{% url 'img/carousel-1.jpg' %}" alt="Image">
+                    <img class="w-100" src="{% static 'img/carousel-1.jpg' %}" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h3 class="text-white mb-3 d-none d-sm-block">Best Pet Services</h3>
@@ -165,6 +175,7 @@
 
 
     <!-- Booking Start -->
+    {% load static %}
     <div class="container-fluid bg-light">
         <div class="container">
             <div class="row align-items-center">
@@ -253,6 +264,7 @@
 
 
     <!-- About Start -->
+    {% load static %}
     <div class="container py-5">
         <div class="row py-5">
             <div class="col-lg-7 pb-5 pb-lg-0 px-3 px-lg-5">
@@ -286,6 +298,7 @@
 
 
     <!-- Services Start -->
+    {% load static %}
     <div class="container-fluid bg-light pt-5">
         <div class="container py-5">
             <div class="d-flex flex-column text-center mb-5">
@@ -348,6 +361,7 @@
 
 
     <!-- Features Start -->
+    {% load static %}
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-5">
@@ -390,6 +404,7 @@
 
 
     <!-- Pricing Plan Start -->
+    {% load static %}
     <div class="container-fluid bg-light pt-5 pb-4">
         <div class="container py-5">
             <div class="d-flex flex-column text-center mb-5">
@@ -476,6 +491,7 @@
 
 
     <!-- Team Start -->
+    {% load static %}
     <div class="container mt-5 pt-5 pb-3">
         <div class="d-flex flex-column text-center mb-5">
             <h4 class="text-secondary mb-3">Team Member</h4>
@@ -755,18 +771,27 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="{% url 'lib/easing/easing.min.js' %}"></script>
-    <script src="{% url 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
-    <script src="{% url 'lib/tempusdominus/js/moment.min.js' %}"></script>
-    <script src="{% url 'lib/tempusdominus/js/moment-timezone.min.js' %}"></script>
-    <script src="{% url 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+    {% load static %}
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    {% load static %}
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    {% load static %}
+    <script src="{% static 'lib/tempusdominus/js/moment.min.js' %}"></script>
+    {% load static %}
+    <script src="{% static 'lib/tempusdominus/js/moment-timezone.min.js' %}"></script>
+    {% load static %}
+    <script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>
 
     <!-- Contact Javascript File -->
-    <script src="{% url 'mail/jqBootstrapValidation.min.js' %}"></script>
-    <script src="{% url 'mail/contact.js' %}"></script>
+    {% load static %}
+    <script src="{% static 'mail/jqBootstrapValidation.min.js' %}"></script>
+    <script src="{% static 'mail/contact.js' %}"></script>
+
 
     <!-- Template Javascript -->
-    <script src="{% url 'js/main.js' %}"></script>
+{% load static %}
+<script src="{% static 'js/main.js' %}"></script>
+
 </body>
 
 </html>
