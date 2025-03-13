@@ -4,7 +4,7 @@ from .models import BlogPost, Booking, Contact
 class BlogPostForm(forms.ModelForm):
     class Meta:
         model = BlogPost
-        fields = ['title', 'content', 'author', 'published_date']
+        fields = ['title', 'content', 'author']
 
 class BookingForm(forms.ModelForm):
     class Meta:

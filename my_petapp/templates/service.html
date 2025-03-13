@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +11,7 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="{% url 'img/favicon.ico' %}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet"> 
@@ -18,14 +20,14 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
     <!-- Flaticon Font -->
-    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+    <link href="{% url 'lib/flaticon/font/flaticon.css' %}" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="{% url 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% url 'lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{% url 'css/style.css' %}" rel="stylesheet">
 </head>
 
 <body>
@@ -192,7 +194,7 @@
             <div class="owl-carousel testimonial-carousel">
                 <div class="bg-light mx-3 p-4">
                     <div class="d-flex align-items-end mb-3 mt-n4 ml-n4">
-                        <img class="img-fluid" src="img/testimonial-1.jpg" style="width: 80px; height: 80px;" alt="">
+                        <img class="img-fluid" src="{% static 'img/testimonial-1.jpg' %}" style="width: 80px; height: 80px;" alt="">
                         <div class="ml-3">
                             <h5>Client Name</h5>
                             <i>Profession</i>
@@ -202,7 +204,7 @@
                 </div>
                 <div class="bg-light mx-3 p-4">
                     <div class="d-flex align-items-end mb-3 mt-n4 ml-n4">
-                        <img class="img-fluid" src="img/testimonial-2.jpg" style="width: 80px; height: 80px;" alt="">
+                        <img class="img-fluid" src="{% static 'img/testimonial-2.jpg' %}" style="width: 80px; height: 80px;" alt="">
                         <div class="ml-3">
                             <h5>Client Name</h5>
                             <i>Profession</i>
@@ -212,7 +214,7 @@
                 </div>
                 <div class="bg-light mx-3 p-4">
                     <div class="d-flex align-items-end mb-3 mt-n4 ml-n4">
-                        <img class="img-fluid" src="img/testimonial-3.jpg" style="width: 80px; height: 80px;" alt="">
+                        <img class="img-fluid" src="{% static 'img/testimonial-3.jpg' %}" style="width: 80px; height: 80px;" alt="">
                         <div class="ml-3">
                             <h5>Client Name</h5>
                             <i>Profession</i>
@@ -222,7 +224,7 @@
                 </div>
                 <div class="bg-light mx-3 p-4">
                     <div class="d-flex align-items-end mb-3 mt-n4 ml-n4">
-                        <img class="img-fluid" src="img/testimonial-4.jpg" style="width: 80px; height: 80px;" alt="">
+                        <img class="img-fluid" src="{% static 'img/testimonial-4.jpg' %}" style="width: 80px; height: 80px;" alt="">
                         <div class="ml-3">
                             <h5>Client Name</h5>
                             <i>Profession</i>
@@ -321,18 +323,18 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="{% url 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% url 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% url 'lib/tempusdominus/js/moment.min.js' %}"></script>
+    <script src="{% url 'lib/tempusdominus/js/moment-timezone.min.js' %}"></script>
+    <script src="{% url 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>
 
     <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
+    <script src="{% url 'mail/jqBootstrapValidation.min.js' %}"></script>
+    <script src="{% url 'mail/contact.js' %}"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="{% url 'js/main.js' %}"></script>
 </body>
 
 </html>
