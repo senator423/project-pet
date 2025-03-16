@@ -18,7 +18,7 @@ class Booking(models.Model):
     time = models.TimeField()
 
     def __str__(self):
-        return f"{self.name} - {self.service} on {self.date}"
+        return self.name
 
 
 class Contact(models.Model):
@@ -28,5 +28,5 @@ class Contact(models.Model):
     submitted_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Message from {self.name}"
+        return self.name
 
