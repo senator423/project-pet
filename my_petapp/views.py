@@ -24,6 +24,9 @@ def blog_list_page(request):
 
 def contact_page(request):
     return render(request, 'contact.html')
+
+def blog_details(request):
+    return render(request, 'single.html')
 # Service API
 class ServiceListCreateView(generics.ListCreateAPIView):
     queryset = Service.objects.all()

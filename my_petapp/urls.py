@@ -3,7 +3,7 @@ from .views import (
     ServiceListCreateView, ServiceDetailView,
     BookingListCreateView, BookingDetailView,
     BlogPostListCreateView, BlogPostDetailView,
-    ContactListCreateView, index, about, services, pricing, booking_page, blog_list_page, contact_page
+    ContactListCreateView, index, about, services, pricing, booking_page, blog_list_page, contact_page, blog_details
 )
 
 urlpatterns = [
@@ -14,6 +14,7 @@ urlpatterns = [
     path('booking/', booking_page, name='booking'),
     path('blog/', blog_list_page, name='blog'),
     path('contact/', contact_page, name='contact'),
+    path('blog-details', blog_details,name='blog-details'),
 
     path('api/services/', ServiceListCreateView.as_view(), name='api_service_list'),
     path('api/services/<int:pk>/', ServiceDetailView.as_view(), name='api_service_detail'),
