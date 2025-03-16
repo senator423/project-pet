@@ -1,17 +1,28 @@
 from django.urls import path
-from . import views
+from .views import (
+    ServiceListCreateView, ServiceDetailView,
+    BookingListCreateView, BookingDetailView,
+    BlogPostListCreateView, BlogPostDetailView,
+    ContactListCreateView, index, about, services, pricing, booking_page, blog_list_page, contact_page
+)
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('about/', views.about, name='about'),
-    path('services/', views.services, name='services'),
-    path('pricing/', views.pricing, name='pricing'),
-    path('blog/', views.blog_list, name='blog_list'),
-    path('blog/<int:post_id>/', views.blog_detail, name='blog_detail'),
-    path('blog/create/', views.blog_create, name='blog_create'),
-    path('blog/update/<int:post_id>/', views.blog_update, name='blog_update'),
-    path('blog/delete/<int:post_id>/', views.blog_delete, name='blog_delete'),
-    path('booking/', views.booking_list, name='booking_list'),
-    path('booking/create/', views.booking_create, name='booking_create'),
-    path('contact/', views.contact_view, name='contact'),
+    path('', index, name='index'),
+    path('about/', about, name='about'),
+    path('services/', services, name='services'),
+    path('pricing/', pricing, name='pricing'),
+    path('booking/', booking_page, name='booking'),
+    path('blog/', blog_list_page, name='blog'),
+    path('contact/', contact_page, name='contact'),
+
+    path('api/services/', ServiceListCreateView.as_view(), name='api_service_list'),
+    path('api/services/<int:pk>/', ServiceDetailView.as_view(), name='api_service_detail'),
+
+    path('api/bookings/', BookingListCreateView.as_view(), name='api_booking_list'),
+    path('api/bookings/<int:pk>/', BookingDetailView.as_view(), name='api_booking_detail'),
+
+    path('api/blog/', BlogPostListCreateView.as_view(), name='api_blog_list'),
+    path('api/blog/<int:pk>/', BlogPostDetailView.as_view(), name='api_blog_detail'),
+
+    path('api/contact/', ContactListCreateView.as_view(), name='api_contact_list'),
 ]

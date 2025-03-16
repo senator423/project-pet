@@ -1,6 +1,8 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from .models import BlogPost, Booking, Contact
-from .forms import BlogPostForm, BookingForm, ContactForm
+from django.shortcuts import render
+from rest_framework import generics
+from .models import Service, Booking, BlogPost, ContactMessage
+from .serializers import ServiceSerializer, BookingSerializer, BlogPostSerializer, ContactSerializer
+from .models import Contact
 
 def index(request):
     return render(request, 'index.html')
@@ -14,62 +16,42 @@ def services(request):
 def pricing(request):
     return render(request, 'price.html')
 
-def blog_list(request):
-    posts = BlogPost.objects.all()
-    return render(request, 'blog.html', {'posts': posts})
+def booking_page(request):
+    return render(request, 'booking.html')
 
-def blog_detail(request, post_id):
-    post = get_object_or_404(BlogPost, id=post_id)
-    return render(request, 'single.html', {'post': post})
+def blog_list_page(request):
+    return render(request, 'blog.html')
 
-def blog_create(request):
-    if request.method == 'POST':
-        form = BlogPostForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('blog_list')
-    else:
-        form = BlogPostForm()
-    return render(request, 'blog.html', {'form': form})
+def contact_page(request):
+    return render(request, 'contact.html')
+# Service API
+class ServiceListCreateView(generics.ListCreateAPIView):
+    queryset = Service.objects.all()
+    serializer_class = ServiceSerializer
 
-def blog_update(request, post_id):
-    post = get_object_or_404(BlogPost, id=post_id)
-    if request.method == 'POST':
-        form = BlogPostForm(request.POST, instance=post)
-        if form.is_valid():
-            form.save()
-            return redirect('blog_list')
-    else:
-        form = BlogPostForm(instance=post)
-    return render(request, 'blog.html', {'form': form})
+class ServiceDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Service.objects.all()
+    serializer_class = ServiceSerializer
 
-def blog_delete(request, post_id):
-    post = get_object_or_404(BlogPost, id=post_id)
-    post.delete()
-    return redirect('blog_list')
+# Booking API
+class BookingListCreateView(generics.ListCreateAPIView):
+    queryset = Booking.objects.all()
+    serializer_class = BookingSerializer
 
-def booking_list(request):
-    bookings = Booking.objects.all()
-    return render(request, 'booking.html', {'bookings': bookings})
+class BookingDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Booking.objects.all()
+    serializer_class = BookingSerializer
 
-def booking_create(request):
-    if request.method == 'POST':
-        form = BookingForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('booking_list')
-    else:
-        form = BookingForm()
-    return render(request, 'booking.html', {'form': form})
+# Blog API
+class BlogPostListCreateView(generics.ListCreateAPIView):
+    queryset = BlogPost.objects.all()
+    serializer_class = BlogPostSerializer
 
-def contact_view(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('contact')
-    else:
-        form = ContactForm()
-    return render(request, 'contact.html', {'form': form})
+class BlogPostDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = BlogPost.objects.all()
+    serializer_class = BlogPostSerializer
 
-
+# Contact API
+class ContactListCreateView(generics.ListCreateAPIView):
+    queryset = ContactMessage.objects.all()
+    serializer_class = ContactSerializer

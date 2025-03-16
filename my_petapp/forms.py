@@ -1,10 +1,5 @@
 from django import forms
-from .models import BlogPost, Booking, Contact
-
-class BlogPostForm(forms.ModelForm):
-    class Meta:
-        model = BlogPost
-        fields = ['title', 'content', 'author']
+from .models import Booking, ContactMessage
 
 class BookingForm(forms.ModelForm):
     class Meta:
@@ -13,5 +8,5 @@ class BookingForm(forms.ModelForm):
 
 class ContactForm(forms.ModelForm):
     class Meta:
-        model = Contact
+        model = ContactMessage
         fields = ['name', 'email', 'message']
