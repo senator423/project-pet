@@ -11,12 +11,12 @@ class Service(models.Model):
 class Booking(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
-    service = models.ForeignKey(Service, on_delete=models.CASCADE)
+    service = models.CharField(max_length=100)
     date = models.DateField()
     time = models.TimeField()
 
     def __str__(self):
-        return f"{self.name} - {self.service.name} on {self.date}"
+        return f"{self.name} - {self.service} on {self.date}"
 
 class BlogPost(models.Model):
     title = models.CharField(max_length=200)
