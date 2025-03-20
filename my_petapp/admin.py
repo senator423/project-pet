@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import BlogPost, Booking, Contact
+from .models import BlogPost, Booking, Contact, Service, ContactMessage
+
 
 @admin.register(BlogPost)
 class BlogPostAdmin(admin.ModelAdmin):
@@ -20,3 +21,13 @@ class ContactAdmin(admin.ModelAdmin):
     search_fields = ('name', 'email')
     ordering = ('-submitted_at',)
 
+@admin.register(Service)
+class ServiceAdmin(admin.ModelAdmin):
+    search_fields = ('name',)
+    ordering = ('name',)
+    list_filter = ('name',)
+
+@admin.register(ContactMessage)
+class ContactMessageAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'message')
+    search_fields = ('name', 'email')
